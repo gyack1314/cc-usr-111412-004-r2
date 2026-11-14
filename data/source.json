@@ -1,0 +1,49 @@
+{
+  "asof": 100,
+  "customers": [
+    {
+      "id": "a",
+      "joined": 0,
+      "coverage_end": 200
+    },
+    {
+      "id": "b",
+      "joined": 80,
+      "coverage_end": 200
+    },
+    {
+      "id": "c",
+      "joined": 0,
+      "coverage_end": 110
+    }
+  ],
+  "transactions": [
+    {
+      "event": "p1",
+      "order": "o1",
+      "customer": "a",
+      "kind": "paid",
+      "time": 10,
+      "known": 10,
+      "amount": "20"
+    },
+    {
+      "event": "p2",
+      "order": "o2",
+      "customer": "a",
+      "kind": "paid",
+      "time": 70,
+      "known": 71,
+      "amount": "30"
+    },
+    {
+      "event": "f2",
+      "order": "o2",
+      "customer": "a",
+      "kind": "refund",
+      "time": 90,
+      "known": 110,
+      "amount": "10"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 来源接口与业务口径
+
+transactions.py的purchases只读time与known均不晚于asof的支付事件，按event去重并拒绝冲突。paid建立order，refund只能引用同客户已付款订单且不超剩余净额；全退订单不在有效购买结果中，退款不产生新购买。
+
+history.py的histories把客户名册的joined与coverage_end连接到购买记录；无购买客户仍在名册中。future_labels仅在评价截止及客户coverage均覆盖decision+horizon时返回未来计数和净金额，否则complete=false且标签为null。该接口没有真实退订标签，也不预测未来购买。
+
+输入为UTF-8 JSON，金额为十进制字符串。样例是合成资料，不限定分析数据规模。
